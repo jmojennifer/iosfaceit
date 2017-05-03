@@ -12,6 +12,7 @@
 		431C7CFA1EBA5A7C00599259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431C7CF81EBA5A7C00599259 /* Main.storyboard */; };
 		431C7CFC1EBA5A7C00599259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431C7CFB1EBA5A7C00599259 /* Assets.xcassets */; };
 		431C7CFF1EBA5A7C00599259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431C7CFD1EBA5A7C00599259 /* LaunchScreen.storyboard */; };
+		431C7D091EBA5BD700599259 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C7D081EBA5BD700599259 /* FaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		431C7CFB1EBA5A7C00599259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		431C7CFE1EBA5A7C00599259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		431C7D001EBA5A7C00599259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		431C7D081EBA5BD700599259 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		431C7CF31EBA5A7C00599259 /* FaceIt */ = {
 			isa = PBXGroup;
 			children = (
-				431C7CF41EBA5A7C00599259 /* AppDelegate.swift */,
 				431C7CF61EBA5A7C00599259 /* ViewController.swift */,
 				431C7CF81EBA5A7C00599259 /* Main.storyboard */,
+				431C7D081EBA5BD700599259 /* FaceView.swift */,
+				431C7D071EBA5ACD00599259 /* Supporting Files */,
+			);
+			path = FaceIt;
+			sourceTree = "<group>";
+		};
+		431C7D071EBA5ACD00599259 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				431C7CF41EBA5A7C00599259 /* AppDelegate.swift */,
 				431C7CFB1EBA5A7C00599259 /* Assets.xcassets */,
 				431C7CFD1EBA5A7C00599259 /* LaunchScreen.storyboard */,
 				431C7D001EBA5A7C00599259 /* Info.plist */,
 			);
-			path = FaceIt;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				431C7CF71EBA5A7C00599259 /* ViewController.swift in Sources */,
 				431C7CF51EBA5A7C00599259 /* AppDelegate.swift in Sources */,
+				431C7D091EBA5BD700599259 /* FaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

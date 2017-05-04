@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var expression = FacialExpression(eyes: .closed, mouth: .neutral) {
+    var expression = FacialExpression(eyes: .closed, mouth: .frown) {
         didSet {
             updateUI()
         }
@@ -39,12 +39,12 @@ class ViewController: UIViewController {
     private func updateUI()
     {
         switch expression.eyes {
-            case .open:
-                faceView?.eyesOpen = true
-            case .closed:
-                faceView?.eyesOpen = false
-            case .squinting:
-                faceView?.eyesOpen = false
+        case .open:
+            faceView?.eyesOpen = true
+        case .closed:
+            faceView?.eyesOpen = false
+        case .squinting:
+            faceView?.eyesOpen = false
         }
         faceView.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
     }

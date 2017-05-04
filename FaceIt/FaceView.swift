@@ -10,9 +10,11 @@ import UIKit
 
 @IBDesignable
 class FaceView: UIView {
+    
+    // Public API
 
     @IBInspectable
-    var scale: CGFloat = 0.9
+    var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
     
     @IBInspectable
     var eyesOpen: Bool = true
@@ -25,6 +27,27 @@ class FaceView: UIView {
     
     @IBInspectable
     var color: UIColor = UIColor.blue
+    
+    func changeScale(byReactingTo pinchRecognizer: UIPinchGestureRecognizer)
+    {
+        switch pinchRecognizer.state {
+        case .changed,.ended:
+            scale *= pinchRecognizer.scale
+            pinchRecognizer.scale = 1
+        default:
+            break
+        }
+    }
+    
+    // Private Implementation
+    
+    private struct Ratios {
+        static let skullRadiusToEyeOffset: CGFloat = 3
+        static let skullRadiusToEyeRadius: CGFloat = 10
+        static let skullRadiusToMouthWidth: CGFloat = 1
+        static let skullRadiusToMouthHeight: CGFloat = 3
+        static let skullRadiusToMouthOffset: CGFloat = 3
+    }
     
     private var skullRadius: CGFloat {
         return min(bounds.size.width, bounds.size.height) / 2 * scale
@@ -114,12 +137,5 @@ class FaceView: UIView {
         pathForEye(.right).stroke()
         pathForMouth().stroke()
     }
-    
-    private struct Ratios {
-        static let skullRadiusToEyeOffset: CGFloat = 3
-        static let skullRadiusToEyeRadius: CGFloat = 10
-        static let skullRadiusToMouthWidth: CGFloat = 1
-        static let skullRadiusToMouthHeight: CGFloat = 3
-        static let skullRadiusToMouthOffset: CGFloat = 3
-    }
+
 }

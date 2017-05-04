@@ -36,7 +36,7 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="1" green="0.50228750113261955" blue="0.90278746474684446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -49,10 +49,13 @@
                             <constraint firstItem="KT3-QG-frr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nfg-AA-vp6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="KT3-QG-frr" id="75S-SL-tRu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="406" y="90"/>
+            <point key="canvasLocation" x="674" y="-2"/>
         </scene>
     </scenes>
 </document>

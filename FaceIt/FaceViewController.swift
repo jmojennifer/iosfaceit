@@ -10,23 +10,23 @@ import UIKit
 
 class FaceViewController: UIViewController {
     
-    @IBOutlet weak var faceView: FaceView! {
+    @IBOutlet weak var faceView: FaceView? {
         didSet {
             let handler = #selector(FaceView.changeScale(byReactingTo:))
             let pinchRecognizer = UIPinchGestureRecognizer(target: faceView, action: handler)
-            faceView.addGestureRecognizer(pinchRecognizer)
+            faceView?.addGestureRecognizer(pinchRecognizer)
             
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleEyes(byReactingTo:)))
             tapRecognizer.numberOfTapsRequired = 1
-            faceView.addGestureRecognizer(tapRecognizer)
+            faceView?.addGestureRecognizer(tapRecognizer)
             
             let swipeUpRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(increaseHappiness))
             swipeUpRecognizer.direction = .up
-            faceView.addGestureRecognizer(swipeUpRecognizer)
+            faceView?.addGestureRecognizer(swipeUpRecognizer)
             
             let swipeDownRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(decreaseHappiness))
             swipeDownRecognizer.direction = .down
-            faceView.addGestureRecognizer(swipeDownRecognizer)
+            faceView?.addGestureRecognizer(swipeDownRecognizer)
             
             updateUI()
         }
@@ -65,7 +65,7 @@ class FaceViewController: UIViewController {
         case .squinting:
             faceView?.eyesOpen = false
         }
-        faceView.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
+        faceView?.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
     }
     
     

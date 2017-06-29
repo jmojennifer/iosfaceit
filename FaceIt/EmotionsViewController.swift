@@ -14,11 +14,15 @@ class EmotionsViewController: UIViewController
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController = segue.destination
+        var destinationViewController = segue.destination
+        if var navigationController = destinationViewController as? UINavigationController {
+            destinationViewController = navigationController.visibleViewController ?? destinationViewController
+        }
         if let faceViewController = destinationViewController as? FaceViewController,
             let identifier = segue.identifier,
             let expression = emotionalFaces[identifier] {
                 faceViewController.expression = expression
+            faceViewController.navigationItem.title = (sender as? UIButton)?.currentTitle
         }
     }
 
